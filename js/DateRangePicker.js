@@ -43,7 +43,8 @@ function onChangeDate(rangepicker, ev) {
   if (changedDate !== undefined && otherDate !== undefined) {
     // if the start of the range > the end, swap them
     if (changedSide === 0 && changedDate > otherDate) {
-      datepicker0.setDate(otherDate, setDateOptions);
+      // instead of swapping sides, clear one and update the first
+      datepicker0.setDate(changedDate, setDateOptions);
       datepicker1.setDate(changedDate, setDateOptions);
     } else if (changedSide === 1 && changedDate < otherDate) {
       datepicker0.setDate(changedDate, setDateOptions);
